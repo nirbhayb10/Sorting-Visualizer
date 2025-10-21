@@ -83,28 +83,3 @@ def merge_sort(data, drawrectangle, delay, stop_flag):
 
     merge_sort_rec(data, 0, len(data)-1)
     drawrectangle(data, ['blue' for _ in range(len(data))])
-
-def quick_sort(data, drawrectangle, delay, stop_flag):
-    def quick_sort_rec(arr, low, high):
-        if stop_flag(): return
-        if low < high:
-            pi = partition(arr, low, high)
-            quick_sort_rec(arr, low, pi-1)
-            quick_sort_rec(arr, pi+1, high)
-
-    def partition(arr, low, high):
-        if stop_flag(): return high
-        pivot = arr[high]
-        i = low - 1
-        for j in range(low, high):
-            if stop_flag(): return high
-            if arr[j] < pivot:
-                i += 1
-                arr[i], arr[j] = arr[j], arr[i]
-            drawrectangle(data, ['blue' if x == j or x == high else 'red' for x in range(len(data))])
-            time.sleep(delay)
-        arr[i+1], arr[high] = arr[high], arr[i+1]
-        return i+1
-
-    quick_sort_rec(data, 0, len(data)-1)
-    drawrectangle(data, ['blue' for _ in range(len(data))])
