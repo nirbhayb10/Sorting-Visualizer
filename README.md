@@ -4,7 +4,7 @@ A simple Python GUI application to visualize different sorting algorithms in act
 Built with **Tkinter** for the interface and supports multiple sorting techniques.
 
 ## Features
-- Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, and Quick Sort
+- Bubble Sort, Insertion Sort, Selection Sort and Merge Sort.
 - Adjustable sorting speed
 - Dynamic array size and value range
 - Stop sorting at any time
